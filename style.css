@@ -1,0 +1,182 @@
+/* WANDERWAYS - shared styles for all four pages */
+
+/* 1. Basic reset: removes default spacing and makes sizing easier */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Body: common font, background and text colour */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9f8;
+    color: #263238;
+    line-height: 1.6;
+}
+
+/* 3. Header and navigation: appears on every page */
+.site-header {
+    background-color: white;
+    min-height: 72px;
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #173f35;
+}
+
+.logo span { color: #e28b54; }
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+nav a {
+    color: #42534e;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover, nav a.active { color: #df8650; }
+
+/* 4. Home hero: background photo + dark overlay for readable text */
+.hero {
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    padding: 60px 9%;
+    color: white;
+    background-image: linear-gradient(rgba(10, 30, 25, 0.55), rgba(10, 30, 25, 0.55)), url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1600");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content { max-width: 570px; }
+.eyebrow { color: #d98752; font-size: 12px; font-weight: bold; letter-spacing: 2px; }
+.hero h1, .page-banner h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.1; margin: 14px 0; }
+.hero-content > p:not(.eyebrow) { max-width: 480px; margin-bottom: 25px; }
+
+/* 5. Buttons: shared button style */
+.button {
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+    background-color: #df8650;
+    color: white;
+    padding: 12px 21px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover { background-color: #bd6938; }
+
+/* 6. Common section spacing and headings */
+.section { width: min(1080px, 86%); margin: 0 auto; padding: 65px 0; }
+.intro { text-align: center; max-width: 760px; }
+.intro h2, .section-title { color: #173f35; font-size: 30px; margin: 8px 0 14px; }
+.section-title { text-align: center; margin-bottom: 28px; }
+
+/* 7. Home feature cards: CSS Grid makes three equal columns */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.feature-card {
+    background: white;
+    padding: 27px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.icon { font-size: 32px; margin-bottom: 10px; }
+.feature-card h3 { color: #173f35; margin-bottom: 8px; }
+
+/* 8. Banner used at the top of inner pages */
+.page-banner {
+    min-height: 250px;
+    padding: 55px 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+}
+
+.page-banner h1 { font-size: clamp(34px, 5vw, 48px); }
+.page-banner p:not(.eyebrow) { color: #f1f4f1; }
+.destinations-banner { background-image: linear-gradient(rgba(14, 44, 35, .65), rgba(14, 44, 35, .65)), url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1500"); }
+.tips-banner { background-image: linear-gradient(rgba(14, 44, 35, .65), rgba(14, 44, 35, .65)), url("https://images.unsplash.com/photo-1488648201637-9a4e6b2f5f4a?w=1500"); }
+.contact-banner { background-image: linear-gradient(rgba(14, 44, 35, .65), rgba(14, 44, 35, .65)), url("https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=1500"); }
+
+/* 9. Destination cards: image, text and small category label */
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.destination-card {
+    overflow: hidden;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .07);
+}
+
+.destination-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.card-content { padding: 20px; }
+.card-content h2 { color: #173f35; font-size: 22px; margin-bottom: 7px; }
+.tag { display: inline-block; margin-top: 13px; padding: 5px 12px; border-radius: 20px; background: #eaf2ed; color: #285b49; font-size: 12px; }
+
+/* 10. Travel tips: number + text in a row */
+.tips-layout { max-width: 800px; }
+.tip { display: flex; gap: 22px; padding: 22px 0; border-bottom: 1px solid #dce5df; }
+.tip-number { color: #df8650; font-size: 25px; font-weight: bold; }
+.tip h2 { color: #173f35; font-size: 21px; margin-bottom: 5px; }
+
+/* 11. Contact page: two-column layout and form controls */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; }
+.contact-info h2 { color: #173f35; font-size: 30px; margin: 10px 0; }
+.contact-info p { margin-bottom: 14px; }
+.contact-form { display: flex; flex-direction: column; gap: 9px; }
+.contact-form label { font-weight: bold; font-size: 14px; margin-top: 5px; }
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd8d0;
+    border-radius: 5px;
+    font: inherit;
+    background: white;
+}
+.contact-form textarea { resize: vertical; }
+.contact-form .button { align-self: flex-start; margin-top: 8px; }
+
+/* 12. Footer: same footer on all pages */
+footer { padding: 22px; text-align: center; background: #173f35; color: white; font-size: 13px; }
+
+/* 13. Responsive design: stacks columns on small screens */
+@media (max-width: 700px) {
+    .site-header { flex-direction: column; }
+    nav { justify-content: center; gap: 14px; }
+    .feature-grid, .destination-grid, .contact-layout { grid-template-columns: 1fr; }
+    .hero { min-height: 420px; padding: 45px 7%; }
+    .section { padding: 45px 0; }
+}
